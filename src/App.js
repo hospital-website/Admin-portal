@@ -14,6 +14,8 @@ import Home from "./components/Home";
 import Login from "./components/Login";
 import ManageDoctor from "./components/ManageDoctor";
 import ManageService from "./components/ManageService";
+import UpdateDoctor from "./components/UpdateDoctor";
+import UpdateService from "./components/UpdateService";
 import { useContext } from "react";
 
 const App = () => {
@@ -73,6 +75,26 @@ const App = () => {
                 element={
                   <RequireAuth>
                     <ManageDoctor />
+                  </RequireAuth>
+                }
+              />
+            </Route>
+            <Route path="/update-service/:id">
+              <Route
+                index
+                element={
+                  <RequireAuth>
+                    <UpdateService />
+                  </RequireAuth>
+                }
+              />
+            </Route>
+            <Route path="/update-doctor/:id">
+              <Route
+                index
+                element={
+                  <RequireAuth>
+                    <UpdateDoctor />
                   </RequireAuth>
                 }
               />
