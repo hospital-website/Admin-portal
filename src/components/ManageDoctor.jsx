@@ -58,7 +58,7 @@ const ManageDoctor = () => {
     {
       field: "degrees",
       headerName: "Degrees",
-      width: 230,
+      width: 200,
     },
     {
       field: "specialities",
@@ -67,8 +67,8 @@ const ManageDoctor = () => {
     },
     {
       field: "exp",
-      headerName: "Experience",
-      width: 150,
+      headerName: "Experience (in years)",
+      width: 180,
     },
     {
       field: "action",
