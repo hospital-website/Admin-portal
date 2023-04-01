@@ -13,6 +13,7 @@ const CreateDoctor = () => {
     specialities: [],
     degrees: [],
     img: "",
+    exp: "",
   });
 
   useEffect(() => {
@@ -67,6 +68,7 @@ const CreateDoctor = () => {
         specialities: [],
         degrees: [],
         img: "",
+        exp: "",
       });
       setFile("");
       setPerc(null);
@@ -134,6 +136,10 @@ const CreateDoctor = () => {
           onChange={handleChange}
           value={data.specialities}
         />
+        <br />
+        <br />
+        <label htmlFor="exp">Experience (in years) : </label>
+        <input type="text" id="exp" value={data.exp} onChange={handleChange} />
         <br />
         <br />
         <button disabled={per !== null && per < 100} type="submit">

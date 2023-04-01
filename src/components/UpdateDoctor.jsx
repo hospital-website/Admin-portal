@@ -143,6 +143,15 @@ const UpdateDoctor = () => {
           />
           <br />
           <br />
+          <label htmlFor="exp">Experience (in years) : </label>
+          <input
+            type="text"
+            id="exp"
+            value={data.exp}
+            onChange={handleChange}
+          />
+          <br />
+          <br />
           <button type="submit" disabled={per !== null && per < 100}>
             Update Doctor
           </button>

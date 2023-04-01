@@ -57,13 +57,18 @@ const ManageDoctor = () => {
     },
     {
       field: "degrees",
-      headerName: "degrees",
-      width: 250,
+      headerName: "Degrees",
+      width: 230,
     },
     {
       field: "specialities",
-      headerName: "specialities",
-      width: 250,
+      headerName: "Specialities",
+      width: 200,
+    },
+    {
+      field: "exp",
+      headerName: "Experience",
+      width: 150,
     },
     {
       field: "action",
