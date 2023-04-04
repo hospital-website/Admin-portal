@@ -86,19 +86,22 @@ const CreateDoctor = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <br />
-        <label htmlFor="name">Doctor Name : </label>
+    <div className="md:py-15 py-10">
+      <form onSubmit={handleSubmit} className="grid justify-center gap-5 md:py-15 py-10 md:px-0 px-5 shadow-2xl h-fit rounded-lg md:w-[60vw] w-[90vw] mx-auto">
+       
+        <div>
+          <label htmlFor="name" className="uppercase font-work text-primary text-base">Doctor Name : </label>
         <input
           type="text"
           id="name"
           onChange={handleChange}
-          value={data.name}
+          value={data.name} className="rounded border-b border-secondary outline-none text-secondary text-sm font-work px-1 py-0.5"
+          placeholder="Enter Full Name"
         />
-        <br />
-        <br />
-        <label htmlFor="image">
+        </div>
+       
+       
+        <label className="uppercase font-work text-primary text-base" htmlFor="image">
           Doctor Image :{" "}
           <DriveFolderUploadOutlinedIcon style={{ cursor: "pointer" }} />
         </label>
@@ -107,12 +110,13 @@ const CreateDoctor = () => {
           id="image"
           onChange={(e) => setFile(e.target.files[0])}
           style={{ display: "none" }}
+          className="border-b border-secondary outline-none rounded text-secondary text-sm font-work px-1 py-0.5"
         />
-        <br />
-        <br />
-        <label htmlFor="degrees">
-          Degree :
-          <span>
+       
+       
+        <label className="uppercase font-work text-primary text-base" htmlFor="degrees">
+          Degree{" "}
+          <span className="text-slate-500 text-xs">
             (if multiple degrees, then separate them by using commas):{" "}
           </span>
         </label>
@@ -121,12 +125,14 @@ const CreateDoctor = () => {
           id="degrees"
           onChange={handleChange}
           value={data.degrees}
+          className="border-b border-secondary outline-none text-secondary rounded text-sm font-work px-1 py-0.5"
+          placeholder="Enter Degree"
         />
-        <br />
-        <br />
-        <label htmlFor="specialities">
-          Speciality :{" "}
-          <span>
+       
+       
+        <label className="uppercase font-work text-primary text-base" htmlFor="specialities">
+          Speciality{" "}
+          <span className="text-slate-500 text-xs">
             (if multiple specialities, then separate them by using commas):{" "}
           </span>
         </label>
@@ -135,14 +141,21 @@ const CreateDoctor = () => {
           id="specialities"
           onChange={handleChange}
           value={data.specialities}
+          className="border-b border-secondary outline-none rounded text-secondary text-sm font-work px-1 py-0.5"
+          placeholder="Enter Specialty"
         />
-        <br />
-        <br />
-        <label htmlFor="exp">Experience (in years) : </label>
-        <input type="text" id="exp" value={data.exp} onChange={handleChange} />
-        <br />
-        <br />
-        <button disabled={per !== null && per < 100} type="submit">
+       
+       
+        <div>
+          <label className="uppercase font-work text-primary text-base" htmlFor="exp">Experience {" "}
+            <span className="text-slate-500 text-xs">
+              (In Years)
+            </span> {" :  "}</label>
+        <input type="text" id="exp" value={data.exp} onChange={handleChange} placeholder="Enter Years Of Experience" className="border-b rounded border-secondary outline-none text-secondary text-sm font-work px-1 py-0.5" />
+        </div>
+       
+       
+        <button disabled={per !== null && per < 100} type="submit" className="bg-primary px-4 py-2 text-base text-white uppercase font-work mx-auto">
           Add Doctor
         </button>
       </form>

@@ -81,19 +81,23 @@ const CreateService = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <br />
-        <label htmlFor="name">Service Name : </label>
-        <input
-          type="text"
-          id="name"
-          value={data.name}
-          onChange={handleChange}
-        />
-        <br />
-        <br />
-        <label htmlFor="img">
+    <div className="md:py-15 py-10">
+      <form onSubmit={handleSubmit} className="grid justify-center gap-5 md:py-15 py-10 md:px-0 px-5 shadow-2xl h-fit rounded-lg md:w-[60vw] w-[90vw] mx-auto">
+        
+        <div>
+          <label className="uppercase font-work text-primary text-base" htmlFor="name">Service Name : </label>
+          <input
+            type="text"
+            id="name"
+            value={data.name}
+            onChange={handleChange}
+            placeholder="Enter Service Name"
+            className="border-b border-secondary rounded outline-none text-secondary text-sm font-work px-1 py-0.5"
+          />
+        </div>
+        
+        
+        <label className="uppercase font-work text-black text-base" htmlFor="img">
           Service Image :{" "}
           <DriveFolderUploadOutlinedIcon style={{ cursor: "pointer" }} />
         </label>
@@ -102,10 +106,11 @@ const CreateService = () => {
           id="img"
           onChange={(e) => setFile(e.target.files[0])}
           style={{ display: "none" }}
+          placeholder="Upload Image"
         />
-        <br />
-        <br />
-        <label htmlFor="desc">Service Description : </label>
+        
+        
+        <label className="uppercase font-work text-black text-base" htmlFor="desc">Service Description : </label>
         <textarea
           name=""
           id="desc"
@@ -113,10 +118,12 @@ const CreateService = () => {
           rows="5"
           value={data.desc}
           onChange={handleChange}
+          placeholder="Write Service Description"
+          className="w-full text-secondary text-sm font-work border border-secondary p-1 outline-none"
         ></textarea>
-        <br />
-        <br />
-        <button disabled={per !== null && per < 100} type="submit">
+        
+        
+        <button disabled={per !== null && per < 100} type="submit" className="bg-primary px-4 py-2 text-base text-white uppercase font-work mx-auto">
           Add Service
         </button>
       </form>
