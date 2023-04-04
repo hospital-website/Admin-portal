@@ -84,7 +84,7 @@ const ManageService = () => {
   ];
 
   return (
-    <div className="datatable">
+    <div className="datatable mb-[120px]">
       <div className="datatableTitle">
         Manage Services
         <Link to="/create-service" className="link">

@@ -25,13 +25,7 @@ const Footer = () => {
           </p>
         </div>
         {/* gfdg */}
-        <div className="footer-imp-links text-white list-none hidden lg:block ">
-          <h1 className="mb-7 text-lg font-semibold">Important Links</h1>
-          {/* <li className="font-light">Appointment</li> */}
-          <li className="font-light">Doctors</li>
-          <li className="font-light">Services</li>
-          <li className="font-light">About Us</li>
-        </div>
+
         <div className="footer-contact text-white list-none">
           <h1 className=" mb-2 md:mb-7 text-lg font-semibold">Contact Us</h1>
           <li className="font-light">
@@ -47,26 +41,6 @@ const Footer = () => {
           <li className="font-light">Ghaziabad-201009</li>
           <li className="font-light">India</li>
         </div>
-        {/* <div className="footer-contact text-white list-none">
-          <h1 className="mb-2 md:mb-7 mt-4 text-lg md:mt-0 font-semibold">
-            Newsletter
-          </h1> */}
-        {/* <div
-            id="newsletter-btn"
-            className="bg-accent   py-1.5  text-primary rounded w-60 flex justify-evenly items-center "
-          >
-            <form action="">
-              <input
-                type="email"
-                placeholder="Enter your email address"
-                className="newsletter-input bg-accent text-primary border-none  "
-              />
-            </form>
-            <p className="text-[24px] ">
-              <RiSendPlaneFill />
-            </p>
-          </div> */}
-        {/* </div> */}
       </div>
 
       <hr className="bg-accent py-0.1 my-2 w-[90vw] max-w-5xl mx-auto" />

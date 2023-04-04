@@ -5,7 +5,7 @@ import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 
 import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
 import { useParams } from "react-router-dom";
-
+import MoonLoader from "react-spinners/ClipLoader";
 const UpdateService = () => {
   const params = useParams();
   const id = params.id;
@@ -89,17 +89,33 @@ const UpdateService = () => {
   return (
     <>
       <div>
-        <form onSubmit={handleUpdate}>
-          <label htmlFor="name">Service Name : </label>
-          <input
-            type="text"
-            id="name"
-            value={data.name}
-            onChange={handleChange}
-          />
-          <br />
-          <br />
-          <label htmlFor="image">Image : </label>
+        <form
+          onSubmit={handleUpdate}
+          className="grid justify-center gap-5 md:py-15 py-10 md:px-0 px-5 shadow-2xl h-fit rounded-lg md:w-[60vw] w-[90vw] mx-auto"
+        >
+          <div>
+            <label
+              htmlFor="name"
+              className="uppercase font-work text-primary text-base"
+            >
+              Service Name :{" "}
+            </label>
+            <input
+              type="text"
+              id="name"
+              value={data.name}
+              placeholder="Enter Service Name"
+              className="border-b border-secondary rounded outline-none text-secondary text-sm font-work px-1 py-0.5"
+              onChange={handleChange}
+            />
+          </div>
+
+          <label
+            className="uppercase font-work text-black text-base"
+            htmlFor="image"
+          >
+            Image :{" "}
+          </label>
           <div>
             <img
               src={data.img}
@@ -110,9 +126,11 @@ const UpdateService = () => {
               }}
             />
           </div>
-          <br />
-          <br />
-          <label htmlFor="img">
+
+          <label
+            className="uppercase font-work text-black text-base"
+            htmlFor="img"
+          >
             Change Image :{" "}
             <DriveFolderUploadOutlinedIcon style={{ cursor: "pointer" }} />
           </label>
@@ -122,9 +140,13 @@ const UpdateService = () => {
             onChange={(e) => setFile(e.target.files[0])}
             style={{ display: "none" }}
           />
-          <br />
-          <br />
-          <label htmlFor="desc">Description : </label>
+
+          <label
+            className="uppercase font-work text-black text-base mt-4"
+            htmlFor="desc"
+          >
+            Service Description :{" "}
+          </label>
           <textarea
             name=""
             id="desc"
@@ -132,12 +154,26 @@ const UpdateService = () => {
             rows="5"
             value={data.desc}
             onChange={handleChange}
+            placeholder="Write Service Description"
+            className="w-full text-secondary text-sm font-work border border-secondary p-1 outline-none"
           ></textarea>
-          <br />
-          <br />
-          <button type="submit" disabled={per !== null && per < 100}>
-            Update Service
-          </button>
+
+          {per !== null && per < 100 ? (
+            <button
+              disabled
+              type="submit"
+              className="bg-primary px-4 py-2 my-4 text-base text-white uppercase font-work mx-auto w-[138.26px] opacity-90 rounded"
+            >
+              <MoonLoader color={"white"} size={34} />
+            </button>
+          ) : (
+            <button
+              type="submit"
+              className="bg-primary px-4 py-4 my-4 text-base text-white uppercase font-work mx-auto  rounded"
+            >
+              Update Service
+            </button>
+          )}
         </form>
       </div>
     </>

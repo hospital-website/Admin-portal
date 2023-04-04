@@ -4,7 +4,7 @@ import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { useEffect, useState } from "react";
 
 import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
-
+import MoonLoader from "react-spinners/ClipLoader";
 const CreateService = () => {
   const [file, setFile] = useState("");
   const [per, setPerc] = useState(null);
@@ -82,10 +82,17 @@ const CreateService = () => {
 
   return (
     <div className="md:py-15 py-10">
-      <form onSubmit={handleSubmit} className="grid justify-center gap-5 md:py-15 py-10 md:px-0 px-5 shadow-2xl h-fit rounded-lg md:w-[60vw] w-[90vw] mx-auto">
-        
-        <div>
-          <label className="uppercase font-work text-primary text-base" htmlFor="name">Service Name : </label>
+      <form
+        onSubmit={handleSubmit}
+        className="grid justify-center gap-5 md:py-15 py-10 md:px-0 px-5 shadow-2xl h-fit rounded-lg md:w-[60vw] w-[90vw] mx-auto"
+      >
+        <div className="my-4">
+          <label
+            className="uppercase font-work text-primary text-base"
+            htmlFor="name"
+          >
+            Service Name :{" "}
+          </label>
           <input
             type="text"
             id="name"
@@ -95,9 +102,11 @@ const CreateService = () => {
             className="border-b border-secondary rounded outline-none text-secondary text-sm font-work px-1 py-0.5"
           />
         </div>
-        
-        
-        <label className="uppercase font-work text-black text-base" htmlFor="img">
+
+        <label
+          className="uppercase font-work text-black text-base"
+          htmlFor="img"
+        >
           Service Image :{" "}
           <DriveFolderUploadOutlinedIcon style={{ cursor: "pointer" }} />
         </label>
@@ -108,9 +117,13 @@ const CreateService = () => {
           style={{ display: "none" }}
           placeholder="Upload Image"
         />
-        
-        
-        <label className="uppercase font-work text-black text-base" htmlFor="desc">Service Description : </label>
+
+        <label
+          className="uppercase font-work text-black text-base mt-4"
+          htmlFor="desc"
+        >
+          Service Description :{" "}
+        </label>
         <textarea
           name=""
           id="desc"
@@ -121,11 +134,22 @@ const CreateService = () => {
           placeholder="Write Service Description"
           className="w-full text-secondary text-sm font-work border border-secondary p-1 outline-none"
         ></textarea>
-        
-        
-        <button disabled={per !== null && per < 100} type="submit" className="bg-primary px-4 py-2 text-base text-white uppercase font-work mx-auto">
-          Add Service
-        </button>
+        {per !== null && per < 100 ? (
+          <button
+            disabled
+            type="submit"
+            className="bg-primary px-4 py-2 my-4 text-base text-white uppercase font-work mx-auto w-[138.26px] opacity-90 rounded"
+          >
+            <MoonLoader color={"white"} size={34} />
+          </button>
+        ) : (
+          <button
+            type="submit"
+            className="bg-primary px-4 py-4 my-4 text-base text-white uppercase font-work mx-auto  rounded"
+          >
+            Add Service
+          </button>
+        )}
       </form>
     </div>
   );

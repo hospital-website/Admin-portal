@@ -94,7 +94,7 @@ const ManageDoctor = () => {
   ];
 
   return (
-    <div className="datatable">
+    <div className="datatable mb-[120px]">
       <div className="datatableTitle">
         Manage Doctors
         <Link to="/create-doctor" className="link">

@@ -10,10 +10,9 @@ const NavBar = () => {
   // const [search, setSearch] = useState(false);
   // const [isMenu, setIsMenu] = useState(false);
 
-  const [ isHome, setIsHome ] = useState(false)
+  const [isHome, setIsHome] = useState(false);
 
   // (window.location.pathname === "/") ? setIsHome(false) : setIsHome(true)
-
 
   return (
     <header>
@@ -78,9 +77,9 @@ const NavBar = () => {
       {/* BOTTOM PART OF HEADER WITH NAVIGATION AND SEARCH */}
       <article
         id="h-bottom"
-        className="bg-primary w-full flex justify-between px-2 md:px-20 items-center md:py-5 py-3"
+        className="bg-primary w-full flex  px-2 md:px-20  md:py-5 py-3"
       >
-      <div id="h-top-name" className="md:hidden mx-auto">
+        <div id="h-top-name" className=" ">
           <h1 className="font-yeseva text-sm text-accent uppercase">
             dr. ram saran garg
           </h1>
@@ -89,10 +88,7 @@ const NavBar = () => {
           </h1>
         </div>
 
-          <nav className="hidden md:flex justify-between gap-12">
-            
-
-          </nav>
+        <nav className="hidden md:flex justify-between gap-12"></nav>
         <div id="nav-side" className="flex gap-5 items-center">
           <div className="search flex items-center gap-5 md:gap-2">
             {/* {search ? (

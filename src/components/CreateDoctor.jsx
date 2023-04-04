@@ -4,7 +4,7 @@ import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { useEffect, useState } from "react";
 
 import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
-
+import MoonLoader from "react-spinners/ClipLoader";
 const CreateDoctor = () => {
   const [file, setFile] = useState("");
   const [per, setPerc] = useState(null);
@@ -87,21 +87,31 @@ const CreateDoctor = () => {
 
   return (
     <div className="md:py-15 py-10">
-      <form onSubmit={handleSubmit} className="grid justify-center gap-5 md:py-15 py-10 md:px-0 px-5 shadow-2xl h-fit rounded-lg md:w-[60vw] w-[90vw] mx-auto">
-       
-        <div>
-          <label htmlFor="name" className="uppercase font-work text-primary text-base">Doctor Name : </label>
-        <input
-          type="text"
-          id="name"
-          onChange={handleChange}
-          value={data.name} className="rounded border-b border-secondary outline-none text-secondary text-sm font-work px-1 py-0.5"
-          placeholder="Enter Full Name"
-        />
+      <form
+        onSubmit={handleSubmit}
+        className="grid justify-center gap-5 md:py-15 py-10 md:px-0 px-5 shadow-2xl h-fit rounded-lg md:w-[60vw] w-[90vw] mx-auto"
+      >
+        <div className="py-2">
+          <label
+            htmlFor="name"
+            className="uppercase font-work text-primary text-base"
+          >
+            Doctor Name :{" "}
+          </label>
+          <input
+            type="text"
+            id="name"
+            onChange={handleChange}
+            value={data.name}
+            className="rounded border-b border-secondary outline-none text-secondary text-sm font-work px-1 py-0.5"
+            placeholder="Enter Full Name"
+          />
         </div>
-       
-       
-        <label className="uppercase font-work text-primary text-base" htmlFor="image">
+
+        <label
+          className="uppercase font-work text-primary text-base pt-2"
+          htmlFor="image"
+        >
           Doctor Image :{" "}
           <DriveFolderUploadOutlinedIcon style={{ cursor: "pointer" }} />
         </label>
@@ -112,9 +122,11 @@ const CreateDoctor = () => {
           style={{ display: "none" }}
           className="border-b border-secondary outline-none rounded text-secondary text-sm font-work px-1 py-0.5"
         />
-       
-       
-        <label className="uppercase font-work text-primary text-base" htmlFor="degrees">
+
+        <label
+          className="uppercase font-work text-primary text-base mt-2"
+          htmlFor="degrees"
+        >
           Degree{" "}
           <span className="text-slate-500 text-xs">
             (if multiple degrees, then separate them by using commas):{" "}
@@ -125,12 +137,14 @@ const CreateDoctor = () => {
           id="degrees"
           onChange={handleChange}
           value={data.degrees}
-          className="border-b border-secondary outline-none text-secondary rounded text-sm font-work px-1 py-0.5"
+          className="border-b border-secondary outline-none text-secondary rounded text-sm font-work px-1  py-1 mb-4 "
           placeholder="Enter Degree"
         />
-       
-       
-        <label className="uppercase font-work text-primary text-base" htmlFor="specialities">
+
+        <label
+          className="uppercase font-work text-primary text-base mt-2"
+          htmlFor="specialities"
+        >
           Speciality{" "}
           <span className="text-slate-500 text-xs">
             (if multiple specialities, then separate them by using commas):{" "}
@@ -141,23 +155,44 @@ const CreateDoctor = () => {
           id="specialities"
           onChange={handleChange}
           value={data.specialities}
-          className="border-b border-secondary outline-none rounded text-secondary text-sm font-work px-1 py-0.5"
+          className="border-b border-secondary outline-none rounded text-secondary text-sm font-work px-1 py-1 mb-4"
           placeholder="Enter Specialty"
         />
-       
-       
-        <div>
-          <label className="uppercase font-work text-primary text-base" htmlFor="exp">Experience {" "}
-            <span className="text-slate-500 text-xs">
-              (In Years)
-            </span> {" :  "}</label>
-        <input type="text" id="exp" value={data.exp} onChange={handleChange} placeholder="Enter Years Of Experience" className="border-b rounded border-secondary outline-none text-secondary text-sm font-work px-1 py-0.5" />
+
+        <div className=" mt-2 mb-8">
+          <label
+            className="uppercase font-work text-primary text-base"
+            htmlFor="exp"
+          >
+            Experience{" "}
+            <span className="text-slate-500 text-xs">(In Years)</span> {" :  "}
+          </label>
+          <input
+            type="text"
+            id="exp"
+            value={data.exp}
+            onChange={handleChange}
+            placeholder="Enter Years Of Experience"
+            className="border-b rounded border-secondary outline-none text-secondary text-sm font-work px-1 py-0.5"
+          />
         </div>
-       
-       
-        <button disabled={per !== null && per < 100} type="submit" className="bg-primary px-4 py-2 text-base text-white uppercase font-work mx-auto">
-          Add Doctor
-        </button>
+
+        {per !== null && per < 100 ? (
+          <button
+            disabled
+            type="submit"
+            className="bg-primary px-4 py-2 my-4 text-base text-white uppercase font-work mx-auto w-[138.26px] opacity-90 rounded"
+          >
+            <MoonLoader color={"white"} size={34} />
+          </button>
+        ) : (
+          <button
+            type="submit"
+            className="bg-primary px-4 py-4 my-4 text-base text-white uppercase font-work mx-auto  rounded"
+          >
+            Add Doctor
+          </button>
+        )}
       </form>
     </div>
   );
