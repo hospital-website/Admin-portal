@@ -109,11 +109,14 @@ const CreateDoctor = () => {
         </div>
 
         <label
-          className="uppercase font-work text-primary text-base pt-2"
+          className="uppercase font-work text-primary flex gap-3 items-center text-base pt-2"
           htmlFor="image"
         >
           Doctor Image :{" "}
-          <DriveFolderUploadOutlinedIcon style={{ cursor: "pointer" }} />
+          <button className="text-base flex items-center gap-3 font-work px-3 py-1 bg-accent text-primary">
+            <DriveFolderUploadOutlinedIcon style={{ cursor: "pointer" }} />
+            Upload
+          </button>
         </label>
         <input
           type="file"

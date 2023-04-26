@@ -10,14 +10,14 @@ const Home = () => {
       {/* <span className="w-full font-work text-lg bg-primary text-accent px-6 py-8 rounded-lg text-center">
         <Link to="/create-doctor">Add new doctor</Link>
       </span> */}
-      <Link to="/create-doctor">
-        <button className="w-[80vw] h-[64px] max-w-[260px] font-work text-lg bg-primary text-accent  rounded-lg text-center">
-          Add new doctor
-        </button>
-      </Link>
       <Link to="/create-service">
         <button className="w-[80vw] h-[64px] max-w-[260px] font-work text-lg bg-primary text-accent  rounded-lg text-center">
           Add new service
+        </button>
+      </Link>
+      <Link to="/create-doctor">
+        <button className="w-[80vw] h-[64px] max-w-[260px] font-work text-lg bg-primary text-accent  rounded-lg text-center">
+          Add new doctor
         </button>
       </Link>
       <Link to="/manage-service">

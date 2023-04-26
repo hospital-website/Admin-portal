@@ -4,13 +4,22 @@ import { MdSearch, MdSearchOff } from "react-icons/md";
 import React, { useState } from "react";
 
 import { GrLocation } from "react-icons/gr";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+
 
 const NavBar = () => {
   // const [search, setSearch] = useState(false);
   // const [isMenu, setIsMenu] = useState(false);
 
   const [isHome, setIsHome] = useState(false);
+
+  const navigate = useNavigate()
+  const location = useLocation()
+
+  const handleGoBack = () => {
+    navigate(-1)
+  }
+
 
   // (window.location.pathname === "/") ? setIsHome(false) : setIsHome(true)
 
@@ -77,9 +86,9 @@ const NavBar = () => {
       {/* BOTTOM PART OF HEADER WITH NAVIGATION AND SEARCH */}
       <article
         id="h-bottom"
-        className="bg-primary w-full flex  px-2 md:px-20  md:py-5 py-3"
+        className="bg-primary w-full flex justify-between px-2 md:px-20  md:py-5 py-3"
       >
-        <div id="h-top-name" className=" ">
+        <div id="h-top-name">
           <h1 className="font-yeseva text-sm text-accent uppercase">
             dr. ram saran garg
           </h1>
@@ -91,6 +100,9 @@ const NavBar = () => {
         <nav className="hidden md:flex justify-between gap-12"></nav>
         <div id="nav-side" className="flex gap-5 items-center">
           <div className="search flex items-center gap-5 md:gap-2">
+            {
+              location.pathname !== "/" && <button className="bg-transparent font-work text-xl font-bold text-white hover:text-accent hover:underline" onClick={handleGoBack}>{"< "} Back</button>
+            }
             {/* {search ? (
               <input
                 type="search"

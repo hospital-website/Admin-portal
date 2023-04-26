@@ -104,11 +104,14 @@ const CreateService = () => {
         </div>
 
         <label
-          className="uppercase font-work text-black text-base"
+          className="uppercase font-work flex gap-3 items-center text-black text-base"
           htmlFor="img"
         >
           Service Image :{" "}
-          <DriveFolderUploadOutlinedIcon style={{ cursor: "pointer" }} />
+          <button className="text-base flex items-center gap-3 font-work px-3 py-1 bg-accent text-primary">
+            <DriveFolderUploadOutlinedIcon style={{ cursor: "pointer" }} />
+            Upload
+          </button>
         </label>
         <input
           type="file"

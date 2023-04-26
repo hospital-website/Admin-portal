@@ -29,8 +29,8 @@ const App = () => {
 
   return (
     <>
-    <NavBar />
-      <Router>
+    <Router>
+      <NavBar />
         <Routes>
           <Route path="/">
             <Route path="/login" element={<Login />} />
