@@ -1,4 +1,5 @@
 import "./App.css";
+import NavBar from "./components/NavBar"
 
 import {
   Navigate,
@@ -17,6 +18,7 @@ import ManageService from "./components/ManageService";
 import UpdateDoctor from "./components/UpdateDoctor";
 import UpdateService from "./components/UpdateService";
 import { useContext } from "react";
+import Footer from "./components/Footer";
 
 const App = () => {
   const { currentUser } = useContext(AuthContext);
@@ -27,7 +29,8 @@ const App = () => {
 
   return (
     <>
-      <Router>
+    <Router>
+      <NavBar />
         <Routes>
           <Route path="/">
             <Route path="/login" element={<Login />} />
@@ -102,6 +105,8 @@ const App = () => {
           </Route>
         </Routes>
       </Router>
+
+      <Footer />
     </>
   );
 };
